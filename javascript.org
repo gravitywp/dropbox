@@ -4,7 +4,6 @@
 *** attr 
 - [async] 立即加载脚本，不妨碍页面中的其他操作，如加载其他脚本,不让页面等待脚本加载，且不保证两个async脚本间的执行顺(不建议修改DOM)。
 - [defer] 表示脚本可以延迟到文档完全解析显示后在执行。
-
 *** DOCTYPE
 - 省略DOCTYPE 则浏览器识别为混杂模式(让浏览器接近包含非标准特性的实现)
 - 标准模式
@@ -18,9 +17,31 @@
 *** 延长作用域链 p75
 + try-catch
 + width
-
+  
 * 垃圾回收
 *** 标记清除(mark-and-sweep)
- IE,Firefox,Opera,Chrome,Safari
+IE,Firefox,Opera,Chrome,Safari
 *** 引用计数 (reference counting)
- IE8 之前 中BOM和DOM 使用C++ 以COM实现采用的是引用计数策略
+IE8 之前 中BOM和DOM 使用C++ 以COM实现采用的是引用计数策略
+* 引用类型
++ 通过字面量定义对象时，不会调用Object的构造函数(like var a = {key:'value'})
++ objectA.isPrototypeOf(objectB) 判断objectA是否在objectB的原型链中
++ hasOwnPropotype 判单是否该对象拥有此属性，而非原型链中有此属性
+*** TODO 
+*** Array
+- toString() 对每一项调用toString() 返回以逗号拼接的字符串而toLocalString()则是调用每项的toLocalString()方法(null or undefined 则以空字符串表示)
+- valueOf() 返回数组
+- push() @return length;
+- unshift && push 添加元素 pop && shift 移除元素
+- slice()参数可以为负数
+- splice(index,delCount,inserts)
+**** ES5
++ indexOf() && lastIndexOf() (未找到返回-1,使用 ===)
++ every filter forEach map some (p96)
++ reduce(function(prev,cur,index,array){
+  ...
+})
+*** Date
++ Date.now() (es5) 在不支持es5的浏览器中可以使用+new Date()
+*** RegExp 
+ 使用字面量正则表达式和使用RegExp构造函数创建的表达式是不一样的。字面量创建的都共享一个RegExp实例。构造函数则每次都返回新的实例(ECMAScript 3).

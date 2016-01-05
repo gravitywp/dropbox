@@ -1,0 +1,8 @@
+#+TITLE: javascript框架设计
+
+* javascript skill
+[].slice().call(arguments) 转换类数组元素为数组 
+
+void 一元运算符 会对 参数求值 可用于返回undefined
+
+x
