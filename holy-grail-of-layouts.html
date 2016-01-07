@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <style>
+         .margin-wrap{
+             margin-left:250px;
+             margin-right:250px;
+         }
+         .left{
+             float:left;
+             width:250px;
+             margin-left:-100%;
+             position:relative;
+         }
+         .right{
+             float:left;
+             width:250px;
+             margin-left:-250px;
+             position:relative;
+         }
+         .main{
+             float:left;
+             width:100%;
+         }
+         .inner-block{
+             min-height:250px;
+         }
+         .main .inner-block{
+             background-color:steelblue;
+         }
+         .left .inner-block,.right .inner-block{
+             background-color:lightgray;
+         }
+         .bfc{
+             overflow:hidden;
+             zoom:1;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="bfc">
+            <div class="main">
+                <div class="margin-wrap">
+                    <div class="inner-block">
+                    </div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="inner-block">
+                </div>
+            </div>
+            <div class="right">
+                <div class="inner-block">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
