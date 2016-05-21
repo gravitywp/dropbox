@@ -1,0 +1,29 @@
+#+TITLE: Redis In Action
+* features
+** 主从复制:
+- 过程: 当配置好 slave 后,slave 与 master 建立连接,然后发送 sync 命令。无论是第
+  一次连接还是重新连接,master 都会启动一个后台进程,将数据库快照保存到文件中,同时
+  master 主进 程会开始收集新的写命令并缓存。后台进程完成写文件后,master 就发送文
+  件给 slave,slave 将文件保存到硬盘上,再加载到内存中,接着 master 就会把缓存的命
+  令转发给 slave,后续 master 将收到的写命令发送给 slave。如果 master 同时收到多
+  个 slave 发来的同步连接命令, master 只会启动一个进程来写数据库镜像,然后发送给
+  所有的 slave。
+- setting: slaveof <masterip> <masterport> #add this to the config file
+** Transaction Contorl
+- watch and transaction 都是连接内有效的 链接断开watch 和 transaction 都和被清除
+- optimsitc locking: 大多数是基于数据版本(version)的记录机制实现的。何谓数据版本?即
+  为数据增 加一个版本标识,在基于数据库表的版本解决方案中,一般是通过为数据库表添
+  加一个 “version”字段来实现读取出数据时,将此版本号一同读出,之后更新时,对此版本
+  号加 1。 此时,将提交数据的版本号与数据库表对应记录的当前版本号进行比对,如果提
+  交的数据版 本号大于数据库表当前版本号,则予以更新,否则认为是过期数据。
+  使用watch对key加乐观锁
+- redis 只能保证事务的每 个命令连续执行,但是如果事务中的一个命令失败了,并不回滚
+  其他命令
+** persisted
+- Snapshotting 
+- aof
+** pub/sub
+-
+** firgure out
+*** TODO understand lock and isolation level
+*** TODO linux copy-on-write concept

@@ -1,0 +1,50 @@
+* nodejs The Definitive Guide
+** Basic Knowledge
+1. console.time('small loop') console.timeEnd('small loop') 计算一段代码执行时间.
+2. conosle.trace(label) 将当前栈信息作为标准错误信息输出
+3. console.assert()
+4. global 是nodejs 运行环境中的全局对象
+5. setInterval or setTimeout  (cb, ms, [arg], [...]) 第三个参数开始为需向回调传递的参数
+6. 对于timer对象有 unref 暂时取消调用  ref则恢复调用
+7. require.resolve('./module') 用来获取某个模块文件的绝对路径 (不回加载模块)
+8. require.cache[require.resolve('./module') 获取缓存模块
+9. __filename __dirname 当前文件的完整路径 or 所在文件夹
+10. nodejs模块中事件处理 继承
+
+** Buffer
+1. new Buffer(size) (字节)
+2. String 类型不可变 Buffer类型可变 slice 对string 操作是复制 对 Buffer 是共享
+3. 将buffer 内容转换为字符串使用toString() or StringDeocoder对象
+
+** link 
+1. hard link: a hard link is a directory entry that associates a name with a file on a file system , Creating a hard link has the effect of giving one file multiple namesjust.
+2. symbolic link: a symbolic link (also symlink or soft link) is the nickname for any file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution.
+
+** stream 
+1. following mode
+2. following mode 
+
+** tcp
+1. options: allowHalfOpen when TCP server accpet FIN package don't sned FIN back. 服务器可以继续向客服端发送数据,但不会接受客户端的数据,需要end()来结束socket.
+2. 当在一个慢速网络环境中需要发送大量时，TCP会将这些数据放在nodejs的缓冲队列,而非操作系统的tcp缓冲区。
+3. socket 是对tcp/ip协议的封装抽象的编程接口,方便程序员使用tcp/ip协议栈
+** http 
+1. when invoke http.ServerResponse's write or wiriteHead method ,send the header right away.
+2. 
+** process
+1. nextTick is invoked before setTimeout(fn, 0).
+2. nextTick 可以用于讲函数推迟到下一个异步代码回调调用前调用
+** child_process
+1. [[http://stackoverflow.com/questions/17861362/node-js-child-process-difference-between-spawn-fork][difference between Spawn & fork]]
+
+** figure out
+1. nodejs Eventloop
+2. when exports as class need use module.exports 
+3. buufer read/write numberx
+4. file descriptor
+5. telnet protocol
+6. http 1.1 support chunked
+7. public key and private key
+8. 
+
+

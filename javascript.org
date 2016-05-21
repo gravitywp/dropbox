@@ -27,7 +27,6 @@ IE8 之前 中BOM和DOM 使用C++ 以COM实现采用的是引用计数策略
 + 通过字面量定义对象时，不会调用Object的构造函数(like var a = {key:'value'})
 + objectA.isPrototypeOf(objectB) 判断objectA是否在objectB的原型链中
 + hasOwnPropotype 判单是否该对象拥有此属性，而非原型链中有此属性
-*** TODO 
 *** Array
 - toString() 对每一项调用toString() 返回以逗号拼接的字符串而toLocalString()则是调用每项的toLocalString()方法(null or undefined 则以空字符串表示)
 - valueOf() 返回数组
