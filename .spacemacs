@@ -39,6 +39,7 @@ values."
      org
      github
      dockerfile
+     go
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -228,6 +229,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'prog-mode-hook 'linum-mode)
   (add-hook 'prog-mode-hook 'linum-relative-mode)
   (setq inferior-js-program-command "node")
+indent-tabs-mode nil
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

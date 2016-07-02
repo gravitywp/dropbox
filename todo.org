@@ -1,0 +1,21 @@
+
+* Wake up                                                              :home:
+** TODO Take shower
+** TODO Brush teach 
+** DONE Get ready
+CLOSED: [2016-03-19 Sat 20:50]
+* Eat [33%]                                                            :home:
+- [ ] bacon
+- [X] eggs
+- [ ] pancakes
+* Go to work                                                           :work:
+
+* Luanch
+** TODO call friend
+** TODO find a place to eat 
+
+* Go Home 
+DEADLINE: <2016-03-20 Sun>
+** DONE get in car
+CLOSED: [2016-03-27 Sun 23:53]
+

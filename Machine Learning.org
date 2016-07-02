@@ -1,0 +1,7 @@
+#+TITLE: Machine Learning
+*  监督学习
+** Classification 
+- 寻找一个涵盖所有正例而不包含任何负例的描述
+- 经验误差是预测值与集合给定预期值不同的训练实例所占的比例
+ 
+** Regression
