@@ -1,0 +1,9 @@
+* adx work [0%]
+** figure out 
+*** TODO bidder data constract
+*** TODO the default platform type
+*** TODO is just one bidder is selected 
+*** TODO adv chart time, hit times, show times, cost, hit percentage
+*** TODO authoriztion graphql server
+*** TODO relay pagination args
+*** TODO 

@@ -39,7 +39,7 @@ vvv2. conosle.trace(label) 将当前栈信息作为标准错误信息输出
 1. [[http://stackoverflow.com/questions/17861362/node-js-child-process-difference-between-spawn-fork][difference between Spawn & fork]]
 
 ** figure out
-1. nodejs Eventloop
+o1. nodejs Eventloop
 2. when exports as class need use module.exports 
 3. buufer read/write numberx
 4. file descriptor

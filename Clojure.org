@@ -1,0 +1,41 @@
+#+TITLE= Clojure
+* Emacs for clojure
+  - C-c M-n
+    binding sets the namespace to the namespace listed at top of your current file.
+  - C-c C-k
+    To compile your current file within the REPL session
+  - C-enter
+    close parentthesis.
+  - C-c C-d C-d
+    Display doc for symbol under point.
+  - C-c C-d C-a
+    Apropros search; find arbitrary text across function names and doc.
+*** Paredit mode...
+  - M-(
+    paredit-wrap-round
+  - C-( & C-)
+    paredit-forward/backward sexp
+  - M-r
+    raise-sexp
+  - M-?
+    convolute-sexp
+  - C-k
+    paredit-kill
+  - M-S
+    paredit-split-sexp
+* Control Flow
+  - if
+  - or
+    return either the first truthy value or the last value.
+  - and
+    return the first falsey value or return the last truthy value.
+  - def
+    use def to bind a name to a value in clojure.
+* Functions
+  - Anonymouse Functions
+    (fn [param-list]
+      fucntion body)
+    or
+    #(* % 3)  ;;(read macros)
+    (#(str %1 " and " %2) "cornbread" "butter beans")
+  -

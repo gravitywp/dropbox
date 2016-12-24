@@ -1,0 +1,29 @@
+#+TITLE: HTTP Defination Guide
+** Cache 
+   - 缓存机制: 文档过期(document expiration) 和服务器再验证(server revalidation) , 文档过期后即与服务器进行在验证
+   - 文档过期：
+     1. Expires
+     2. Cache-Control:max-age
+   - 服务器再验证:
+     1. If-Modified-Since: Date
+     2. If-None-Match: 实体标签在验证(Etag "版本版本标识符") 
+     3. 如果缓存或者服务器收到的请求既带有If-Modified-Since,又带有实体标签首部,那么只有当这两个条件都满足时才能返回304 Not Modified.
+     4. 服务器会使用前缀"W/"来标识若验证器。ex: Etag: W/"v2.6".
+   - 控制缓存能力
+     1. no-store && no-cache 响应首部
+        Pragma: no-cache
+        Cache-Control: no-store
+        Cache-Control: no-cache
+        
+        标示为no-store的响应会禁止缓存对响应进行复制。缓存通常会像非缓存代理服务器一样，向客服端转发一条no-store响应，然后删除对象。
+        标示为no-cache的响应实际上是开源存储再本地缓存区的，只是再与服务器进行验证前，不能再将其提供给客服端使用。(do-not-server-from-cache-without-revalidation)
+        Pragma: no-cache首部为兼容HTTP/1.0+
+     2. max-age
+        Cache-Control: max-age=3600
+        Cache-Control: s-maxage=3600 // 适用于共有缓存
+     3. Expires
+     4. must-revalidate
+        Cache-Control: must-revalidate
+        再检查新鲜度时服务器不可以用需要返回 504 Gateway Timeout
+     5. 试探性过期
+     6. 客服端新鲜度控制

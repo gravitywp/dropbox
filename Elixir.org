@@ -1,2 +1,24 @@
 #+TITLE: Elixir
-* 
+* Elixir in action
+** Data struct
+   - Tuples
+     {"bobo", 25}
+     methods: Kernel.elem, put_elem note:tuples are alaways copied, but copying is shallow.
+   - Lists
+     defintation: prime_numbers = [1, 2, 3, 4]   a_list = [head | tail} (tail is list, head is a element)
+     methods: Enum.at, List.replace_at, hd, tl
+     contact tow lists [1,2,3,4] ++ [5,6]
+     figure out: why adding elements to the end of list is expensive?
+   - Maps
+     defintation: %{:name => "Bob", :age => 25, :works_at => "Initech"} slightly shortter => %{name: "Bob", age: 25}
+     useage: bob[:works_at], bob.age  modify: %{bob | age: 26, works_at: "Initrode"}  add: Map.put
+   - Binaries, bitstrings
+   - Strings (a binary or a list type)
+     defination: ~s("string") ~S("string")
+   - Function 
+     lambda = fn(x, y, z) -> x * y * z end  shoter=> lambda = &(&1 * &2 * &3)
+   - Buildin types 
+     Reference, pid, port identifier
+   - Heighter-level types
+     Range, Keyword Lists, 
+** 

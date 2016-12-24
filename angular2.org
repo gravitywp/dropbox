@@ -1,0 +1,11 @@
+#+TITLE= Angular2 Get Started
+** NgModule
+*** declarations : This array contains the list of all components, pipes, and directives that we created and that belong to
+    in our application's module.
+** Common Sense
+*** Bind Event: like this : <li (click)="fn"/>.
+*** Service: Use component's constructor to inject service, @Component's  metadata "providers" to tell how to proivder service.
+*** Interface: ngOnInit lifecycle hook
+
+
+
